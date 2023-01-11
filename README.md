@@ -13,7 +13,7 @@ This script automates the process of performing a storage vMotion on a virtual m
 The following variables must be configured before running the script:
 
 - `$vCenterServer`: The URL of the vCenter server.
-- `$vCenterUser`: The vCenter username, in the format `username@domain`.
+- `$vCenterUser`: The vCenter username
 - `$vmName`: The name of the VM to perform the storage vMotion on.
 - `$vmFolder`: The name of the folder containing the VM.
 - `$vaultUrl`: The URL of the Hashicorp Vault server.
@@ -29,4 +29,3 @@ The following variables must be configured before running the script:
 - After that, using `Get-VM` cmdlet it retrieves the virtual machine (VM) specified by the `$vmName` variable and the `$vmFolder` variable.
 - Then the script retrieves the destination datastore storage cluster using `Get-Datastore` and `$datastoreClusterName` variable.
 - At last using `Move-VMStorage` cmdlet it performs the Storage vMotion, converting the disk type to Thick (Lazy Zeroed) format which is specified by `-DiskStorageFormat 'ThickLazyZeroed'` option.
-
