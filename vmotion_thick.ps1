@@ -33,6 +33,7 @@ Connect-VIServer -Server $vCenterServer -User $vCenterUser -Password $vCenterPas
 $vm = Get-VM -Name $vmName -Location $vmFolder
 
 # Retrieve the destination datastore storage cluster
+
 $datastoreClusterName = 'DatastoreCluster-01'
 $datastoreCluster = Get-Datastore -Name $datastoreClusterName
 
